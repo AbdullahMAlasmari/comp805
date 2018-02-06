@@ -18,6 +18,7 @@ def squared(num_list):
     return new_list
 
 t1 = [1, 2, 3]
+t2
 res = squared(t1)
 
     #2 **Function Interface:
@@ -35,11 +36,11 @@ def check_title(title_list):
     """
 
 def check_title(title_list):
-    mytitlelist = []
-    for strs in title_list:
-        if strs.istitle():
-            mytitlelist.append(strs)
-    return mytitlelist
+    new_list = []
+    for title in title_list:
+        if title.istitle():
+            new_list.append(title)
+    return new_list
 
 
 def restock_inventory(inventory):
@@ -57,9 +58,10 @@ def restock_inventory(inventory):
     Returns: updated dictionary where each inventory item is restocked
 
     """
-    for inventories in inventory:
-        inventory[inventories] += 10
-    return inventory
+    new_inventory = { }
+    for key, val in inventory.items( ):
+    	new_inventory[key] = val + 10
+    return new_inventory
 
 
 def filter_0_items(inventory):
@@ -77,10 +79,12 @@ def filter_0_items(inventory):
     Returns: the same inventory_dict with any item that had 0 quantity removed
 
     """
-    for inventories in inventory:
-        if inventory[inventories] == 0:
-            del inventory[inventories]
-    return inventory
+    new_inventory = { }
+
+    for a, b in inventory.items ( ):
+        if v != 0:
+            new_inventory[k] = v
+    return new_inventory
 
 
 def average_grades(grades):
@@ -99,7 +103,7 @@ def average_grades(grades):
 
     """
     avgDict = {}
-    for k,v in StudentGrades.iteritems():
+    for student_name, student_grades in grades.items( ):
+        new_grades[student_name] = sum(student_grades) / len(student_grades)
         # v is the list of grades for student k
-        avgDict[k] = sum(v)/ float(len(v))
-    return avgDict
+    return new_grades
