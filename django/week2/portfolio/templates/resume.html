@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 {% load static %}
 {% block content %}
+<style>
+body {
+	background-color: #e5e7e9;
+}
+</style>
 	<h1>My Resume</h1>
 	<p>Name: {{my_name}}</p>
 	<p>Address: {{my_addr}}</p>
@@ -15,8 +20,10 @@
 		<th>|</th>
 		<th>From - End</th>
 		<tr>
-			<td>University of New Hampshire| </td>
-			<td>MS Information Technology| </td>
+			<td>University of New Hampshire</td>
+			<td>|</td>
+			<td>MS Information Technology</td>
+			<td>|</td>
 			<td>2017 - 2019</td>
 		</tr>
 		<tr>
@@ -31,6 +38,8 @@
 	{% for skills in my_skills %}
 		<ul>
 			<li>{{skills}}</li>
+			<li> C++ </li>
+			<li> Python </li>
 		</ul>
 
 	{% endfor %}
