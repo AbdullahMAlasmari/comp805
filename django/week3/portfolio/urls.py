@@ -1,4 +1,5 @@
 """portfolio URL Configuration
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
@@ -13,15 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import include
+from django.urls import path, include
 
 from . import views
 
 urlpatterns = [
 	path(r'', views.home, name='home'),
-	path('resume/', views.resume, name='resume'),
-	path('portfolio/', views.portfolio, name='portfolio'),
-	path('contact/', views.contact, name='contact'),
+	path(r'portfolio', views.portfolio, name='portfolio'),
+	path(r'contact', views.contact, name='contact'),
+    path(r'resume', include('resume.urls', namespace='resume')),
     path('admin/', admin.site.urls),
 ]
