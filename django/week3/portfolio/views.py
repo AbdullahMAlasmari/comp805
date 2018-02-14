@@ -20,3 +20,10 @@ def contact(request):
 	'''
 	context = {}
 	return render(request,'contact.html',context)
+    
+def resume(request):
+    '''
+    Renders contact page
+    '''
+    context = {}
+    return render (request, 'resume.html', context)

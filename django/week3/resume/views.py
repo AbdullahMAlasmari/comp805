@@ -17,4 +17,4 @@ def home(request):
     context = {'my_education':educations,'my_experiences':experiences,
     'my_name':name,'my_addr':address,'my_phone':phone,"my_email":email,
     "my_skills":skills}
-    return render(request,'resume/home.html',context)
+    return render(request,'resume.html',context)

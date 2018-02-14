@@ -1,7 +1,13 @@
 from django.db import models
 
 # Create your models here.
+class Resume(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
 
+    def test_last_name_first(self):
+        return "{} {}".format(self.last_name, self.first_name)
+        
 class Experience(models.Model):
     title = models.CharField(max_length=100,null=False, blank=False)
     location = models.CharField(max_length=100,null=False, blank=False)
