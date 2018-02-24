@@ -5,7 +5,7 @@ class Resume(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
 
-    def test_last_name_first(self):
+    def get_last_name_first(self):
         return "{} {}".format(self.last_name, self.first_name)
 
     def get_full_name(self):
@@ -26,9 +26,11 @@ class Resume(models.Model):
         """
         return self.experience_set.all()
 
+    def __str__(self):
+        return self.first_name
 
 class Experience(models.Model):
-    parent_resume = models.ForeignKey('Resume', on_delete=models.CASCADE, default=1)
+    parent_resume = models.ForeignKey(Resume, on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=100,null=False, blank=False)
     location = models.CharField(max_length=100,null=False, blank=False)
     start_date = models.DateField(null=False, blank=False)
@@ -36,10 +38,11 @@ class Experience(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.title
+        return "{}, {}, {}, {}, {}".format(self.title, self.location,
+self.start_date, self.end_date, self.description)
 
 class Education(models.Model):
-    parent_resume = models.ForeignKey('Resume', on_delete=models.CASCADE, default=1)
+    parent_resume = models.ForeignKey(Resume, on_delete=models.CASCADE, default=1)
     institution_name = models.CharField(max_length=100,null=False, blank=False)
     location = models.CharField(max_length=100,null=False, blank=False)
     degree = models.CharField(max_length=20,null=False, blank=False)
@@ -47,4 +50,5 @@ class Education(models.Model):
     gpa = models.FloatField(null=False, blank=False)
 
     def __str__(self):
-        return" {}, {}, {},{}, {}".format(self.institution_name, self.location, self.degree, self.major, self.gpa)
+        return "{}, {}, {}, {}, {}".format(self.institution_name, self.location,
+self.degree, self.major, self.gpa)

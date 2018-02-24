@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-from .models import Resume
+from .models import Resume, Education, Experience
 
 
 def resume(request):
     """
     renders the resume page from resume app
     """
-    resume = Resume.objects.first()
+    resume = Resume.objects.all()
 
     return render(request, "resume/resume.html",
         context={"resume": resume})
