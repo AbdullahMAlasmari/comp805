@@ -27,7 +27,7 @@ class Resume(models.Model):
         return self.experience_set.all()
 
     def __str__(self):
-        return self.first_name
+        return "{} {}".format(self.first_name,self.last_name)
 
 class Experience(models.Model):
     parent_resume = models.ForeignKey(Resume, on_delete=models.CASCADE, default=1)

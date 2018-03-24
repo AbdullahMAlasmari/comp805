@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Education, Experience, Resume
+import datetime
 
 class ResumeTestCase(TestCase):
     #declare instance variables.

@@ -18,49 +18,49 @@ def give_me_a_string():
     This function returns a string value
     """
     return 'This is Abdullah'
-   
+
 
 def give_me_an_integer():
     """
     This function returns an integer value
     """
     return 1992
-    
-  
+
+
 def give_me_a_boolean():
     """
     This function returns a boolean value
     """
-    return True 
-    
+    return True
+
 
 def give_me_a_float():
     """
     This function returns a float value
     """
-    return 0.01 
-   
+    return 0.01
+
 
 def give_me_a_list():
     """
     This function returns a list
     """
     return ["Abdul", "Alex", "Tree"]
-    
+
 
 def give_me_a_dictionary():
     """
     This function returns a dictionary
     """
     return {'Name' : 'Abdul', 'Age': 25}
-    
+
 
 def give_me_a_tuple():
     """
     This function returns a tuple
     """
     return ('comp805', 'comp835', 5)
- 
+
 
 def sum_numbers_one_to_ten():
     """
@@ -70,9 +70,9 @@ def sum_numbers_one_to_ten():
     Use the accumulator pattern:
     http://interactivepython.org/runestone/static/thinkcspy/Functions/TheAccumulatorPattern.html
     """
-    a = range(1,11)
-    sum_numbers = sum(a)
-    return sum_numbers 
+    num = range(1,11)
+    sum_numbers = sum(num)
+    return sum_numbers
 
 def check_is_even(number):
     """
@@ -97,11 +97,23 @@ def check_is_less_than(number1, number2):
         return False
 
 def check_is_greater_than(number1, number2):
+    """
+    This functions returns True if number1 > number2
+    else False
+    """
     if number1 > number2:
         return True
     else:
         return False
 
 def check_if_number_equal5():
+    """
+    This function returns 5
+    """
     return 5
 
+def check_is_odd(number):
+    """
+    This function returns if remainder is odd number
+    """
+    return number % 2 != 0
