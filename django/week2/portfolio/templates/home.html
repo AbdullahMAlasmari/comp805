@@ -1,12 +1,21 @@
+
 {% extends 'base.html' %}
-<!DOCTYPE html>
 {% load static %}
+
 {% block content %}
-<style>
-body {
-  background-color: #e5e7e9;
-}
-</style>
-  <h1 style="background-color:DodgerBlue;">Welcome to my Homepage!</h1>
-	<p style="background-color:Tomato;">On this site you will find more Information about me...</p>
+  <div class="homepage-content">
+    <div class="homepage-banner">
+      <h2>  Welcome to my Portfolio</h2>
+      <hr>
+      <h4>Abdullah Alasmari</h4>
+      <p>MS IT Candidate '18</p>
+      <p>University of New Hampshire</p>
+    </div>
+    <br />
+    <body>
+
+    <br /><br />
+    <a href="{% url 'resume' %}">View Resume</a>
+  </body>
+  </div>
 {% endblock %}
